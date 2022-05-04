@@ -1,5 +1,7 @@
 extends Node2D
 
+export (Vector2) var cell_size = Vector2(40, 40)
+export (Vector2) var cell_offset = Vector2.ZERO
 export (float) var wait_time = 3.0
 export (int) var number_of_ticks = 2
 export (Vector2) var tick_scale = Vector2(1.2, 1.2)
@@ -16,6 +18,7 @@ var current_tick = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Doesn't tick at start and end
+	snap_to_cells()
 	t_tick.wait_time = wait_time / (number_of_ticks + 1)
 	t_tick.connect("timeout", self, "tick")
 	t_tick.start()
@@ -26,6 +29,8 @@ func restart():
 	t_tick.start()
 
 func tick():
+	if current_tick > number_of_ticks:
+		return
 	if current_tick == number_of_ticks:
 		t_tick.stop()
 		explode()
@@ -42,6 +47,6 @@ func explode():
 	yield(get_tree().create_timer(par_explosion.lifetime), "timeout")
 	call_deferred("queue_free")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func snap_to_cells():
+	position -= Vector2(int(position.x) % int(cell_size.x), int(position.y) % int(cell_size.y))
+	position += cell_size / 2
