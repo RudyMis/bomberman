@@ -3,9 +3,8 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Bomberman/KinematicBody2D.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 31.0
-height = 0.0
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 31, 23, 31, -23, 25, -31, -25, -31, -31, -23, -31, 23, -23, 31, 23, 31 )
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 2 )
