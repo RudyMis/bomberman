@@ -1,9 +1,16 @@
 extends Node2D
 
+class_name Bomb
+func is_class(name): return "Bomb" || .is_class(name)
+func get_class(): return "Bomb"
+
+# [Bomb setup]
 export (Vector2) var cell_size = Vector2(40, 40)
 export (Vector2) var cell_offset = Vector2.ZERO
 export (float) var wait_time = 3.0
 export (int) var number_of_ticks = 2
+
+# [Animation]
 export (Vector2) var tick_scale = Vector2(1.2, 1.2)
 export (float) var animation_time = 0.1
 export (Array, Color) var modulates = [Color.yellow, Color.red]

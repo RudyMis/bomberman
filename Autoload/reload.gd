@@ -6,9 +6,11 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-func _input(event):
+func _input(_e):
 	if Input.is_action_just_pressed("reload"):
-		get_tree().reload_current_scene()
+		var res = get_tree().reload_current_scene()
+		if res != OK:
+			print("Error reloading scene: " + res)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

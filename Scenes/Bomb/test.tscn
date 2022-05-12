@@ -9,7 +9,7 @@ position = Vector2( 675, 289 )
 wait_time = 5.0
 
 [node name="bomb2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 248, 186 )
+position = Vector2( 80, 80 )
 wait_time = 2.0
 
 [node name="bomb3" parent="." instance=ExtResource( 1 )]

@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Bomb",
+"language": "GDScript",
+"path": "res://Scenes/Bomb/Bomb.gd"
+} ]
+_global_script_class_icons={
+"Bomb": ""
+}
+
 [application]
 
 config/name="bomberman"
