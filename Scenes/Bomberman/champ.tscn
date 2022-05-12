@@ -4,10 +4,10 @@
 [ext_resource path="res://Scenes/Bomberman/KinematicBody2D.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 33.0
+radius = 31.0
 height = 0.0
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
