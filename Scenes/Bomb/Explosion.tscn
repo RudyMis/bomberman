@@ -25,3 +25,4 @@ rest = Transform2D( 1, 0, 0, 1, 64, 0 )
 [node name="explosion" type="RayCast2D" parent="."]
 cast_to = Vector2( 0, 0 )
 collision_mask = 7
+collide_with_areas = true

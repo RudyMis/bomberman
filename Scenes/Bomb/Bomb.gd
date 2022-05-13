@@ -26,6 +26,7 @@ onready var what_explodes = $explodes
 onready var explosion_rays = $explosion_rays
 
 var current_tick = 0
+var exploded = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +48,6 @@ func tick():
 	if current_tick > number_of_ticks:
 		return
 	if current_tick == number_of_ticks:
-		t_tick.stop()
 		explode()
 		return
 	modulate = modulates[current_tick]
@@ -56,7 +56,12 @@ func tick():
 	tw_animation.start()
 
 func explode():
-	what_explodes.call_deferred("queue_free")
+	print("Bomb explode")
+	t_tick.stop()
+	if exploded == false:
+		exploded = true
+		what_explodes.call_deferred("queue_free")
+
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
 			ray.explode()
