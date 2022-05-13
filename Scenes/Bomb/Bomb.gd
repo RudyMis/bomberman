@@ -8,7 +8,8 @@ func get_class(): return "Bomb"
 export (Vector2) var cell_size = Vector2(40, 40)
 export (Vector2) var cell_offset = Vector2.ZERO
 export (float) var wait_time = 3.0
-export (int) var number_of_ticks = 2
+export (int) var number_of_ticks = 2 
+var bomberman
 
 # [Animation]
 export (Vector2) var tick_scale = Vector2(1.2, 1.2)
@@ -52,7 +53,7 @@ func tick():
 		return
 	modulate = modulates[current_tick]
 	current_tick += 1
-	tw_animation.interpolate_property(self, "scale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
+	tw_animation.interpolate_property(self, "svacale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
 	tw_animation.start()
 
 func explode():
@@ -63,6 +64,7 @@ func explode():
 	if exploded == false:
 		exploded = true
 		what_explodes.call_deferred("queue_free")
+		bomberman.bombs += 1
 
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
