@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="bomberman"
-run/main_scene="res://Scenes/Bomberman/champ.tscn"
+run/main_scene="res://Scenes/Player/Player.tscn"
 config/icon="res://icon.png"
 
 [input]
