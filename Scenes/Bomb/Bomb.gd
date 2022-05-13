@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 class_name Bomb
 func is_class(name): return "Bomb" || .is_class(name)
@@ -53,17 +53,17 @@ func tick():
 		return
 	modulate = modulates[current_tick]
 	current_tick += 1
-	tw_animation.interpolate_property(self, "svacale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
+	tw_animation.interpolate_property(self, "scale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
 	tw_animation.start()
 
 func explode():
-	print("Bomb explode")
+	if exploded == true:
+		return
+		
 	t_tick.stop()
-	if exploded == false:
-		exploded = true
-		what_explodes.call_deferred("queue_free")
-		bomberman.bombs += 1
-		bomberman.change_text()
+	exploded = true
+	what_explodes.call_deferred("queue_free")
+	bomberman.bombs += 1
 
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
