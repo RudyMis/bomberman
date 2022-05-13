@@ -2,18 +2,19 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 export (PackedScene) var ps_bomb
+export (String) var player = "1"
 
 var velocity = Vector2()
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right" + player):
 		velocity.x += 1
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left" + player):
 		velocity.x -= 1
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("down" + player):
 		velocity.y += 1
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up" + player):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
 
@@ -27,7 +28,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _unhandled_input(event):
-	if event.is_action_pressed("bomb"):
+	if event.is_action_pressed("bomb" + player):
 		place_bomb()
 
 func _physics_process(delta):

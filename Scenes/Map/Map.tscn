@@ -22,3 +22,7 @@ scenes = [ ExtResource( 3 ) ]
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 97, 99 )
+
+[node name="player2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 93, 869 )
+player = "2"
