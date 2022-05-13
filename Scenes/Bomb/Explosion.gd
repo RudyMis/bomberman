@@ -21,6 +21,5 @@ func _process(_delta):
 		if explosion_cast.get_collider() == null:
 			return
 		var collider = explosion_cast.get_collider()
-		print(collider)
 		if collider != null && collider.has_method("explode"):
 			collider.explode()

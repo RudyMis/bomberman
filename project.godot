@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Area2D",
 "class": "Bomb",
 "language": "GDScript",
 "path": "res://Scenes/Bomb/Bomb.gd"
@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="bomberman"
 run/main_scene="res://Scenes/Map/Map.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Reload="*res://Autoload/reload.gd"
 
 [input]
 
@@ -49,6 +53,11 @@ down={
 bomb={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+reload={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777248,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

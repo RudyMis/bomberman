@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 class_name Bomb
 func is_class(name): return "Bomb" || .is_class(name)
@@ -56,7 +56,9 @@ func tick():
 	tw_animation.start()
 
 func explode():
-	print("Bomb explode")
+	if exploded == true:
+		return
+		
 	t_tick.stop()
 	if exploded == false:
 		exploded = true
