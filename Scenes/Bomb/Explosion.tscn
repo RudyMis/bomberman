@@ -4,6 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="explosion_checker" type="RayCast2D"]
+enabled = true
 cast_to = Vector2( 128, 0 )
 script = ExtResource( 1 )
 
