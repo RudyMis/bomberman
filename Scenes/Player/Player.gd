@@ -4,8 +4,8 @@ export (int) var speed = 200
 export (PackedScene) var ps_bomb
 
 var bombs = 2;
-var bomb_range = 1
-var radious_range_const = 64
+export (int) var bomb_range = 1
+export (int) var radious_range_const = 64
 var velocity = Vector2()
 onready var label = $Label
 
