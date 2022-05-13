@@ -1,20 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Bomb/Bomb.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Resources/PM_BombExplosion.tres" type="Material" id=3]
+[ext_resource path="res://Scenes/Bomb/Explosion.tscn" type="PackedScene" id=4]
 
 [node name="bomb" type="Node2D"]
 script = ExtResource( 1 )
 cell_size = Vector2( 80, 80 )
 number_of_ticks = 3
 modulates = [ Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+explosion_radius = 500
 
 [node name="animation_tween" type="Tween" parent="."]
 
 [node name="tick_timer" type="Timer" parent="."]
 
-[node name="explosion" type="Particles2D" parent="."]
+[node name="explosion_rays" type="Node2D" parent="."]
+
+[node name="explosion_checker" parent="explosion_rays" instance=ExtResource( 4 )]
+
+[node name="explosion_checker2" parent="explosion_rays" instance=ExtResource( 4 )]
+rotation = 1.5708
+
+[node name="explosion_checker3" parent="explosion_rays" instance=ExtResource( 4 )]
+rotation = 3.14159
+
+[node name="explosion_checker4" parent="explosion_rays" instance=ExtResource( 4 )]
+rotation = -1.5708
+
+[node name="explosion_particles" type="Particles2D" parent="."]
 emitting = false
 amount = 16
 one_shot = true
