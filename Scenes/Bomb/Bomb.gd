@@ -63,6 +63,7 @@ func explode():
 		exploded = true
 		what_explodes.call_deferred("queue_free")
 		bomberman.bombs += 1
+		bomberman.change_text()
 
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
