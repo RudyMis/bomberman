@@ -63,9 +63,10 @@ func explode():
 	
 	modulate = Color.white
 	par_explosion.restart()
-	yield(get_tree().create_timer(par_explosion.lifetime), "timeout")
+	yield(get_tree().create_timer(explosion_time), "timeout")
 	call_deferred("queue_free")
 
 func snap_to_cells():
-	position -= Vector2(int(position.x) % int(cell_size.x), int(position.y) % int(cell_size.y))
+	position -= Vector2(int(position.x + cell_offset.x) % int(cell_size.x),
+						int(position.y + cell_offset.y) % int(cell_size.y))
 	position += cell_size / 2
