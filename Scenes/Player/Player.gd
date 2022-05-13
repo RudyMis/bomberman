@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 export (PackedScene) var ps_bomb
 
+var bombs = 2;
 var velocity = Vector2()
 
 func get_input():
@@ -18,9 +19,12 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func place_bomb():
-	var bomb = ps_bomb.instance()
-	bomb.position = position
-	get_parent().add_child(bomb)
+	if bombs > 0:
+		var bomb = ps_bomb.instance()
+		bomb.position = position
+		get_parent().add_child(bomb)
+		bomb.bomberman = self
+		bombs -= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
