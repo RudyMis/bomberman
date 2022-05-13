@@ -35,6 +35,6 @@ func _unhandled_input(event):
 	if event.is_action_pressed("bomb" + player):
 		place_bomb()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
