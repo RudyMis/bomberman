@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Bomb",
 "language": "GDScript",
 "path": "res://Scenes/Bomb/Bomb.gd"
+}, {
+"base": "Node",
+"class": "Powerup",
+"language": "GDScript",
+"path": "res://Scenes/Powerup/powerup.gd"
 } ]
 _global_script_class_icons={
-"Bomb": ""
+"Bomb": "",
+"Powerup": ""
 }
 
 [application]
