@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+class_name Player
+func is_class(name): return "Player" || .is_class(name)
+func get_class(): return "Player"
+
 export (int) var speed = 200
 export (PackedScene) var ps_bomb
 export (String) var player = "1"
