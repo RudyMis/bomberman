@@ -67,7 +67,7 @@ func tick():
 		return
 	modulate = modulates[current_tick]
 	current_tick += 1
-	tw_animation.interpolate_property(self, "scale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
+	tw_animation.interpolate_property(what_explodes, "scale", tick_scale, Vector2.ONE, animation_time, Tween.TRANS_LINEAR)
 	tw_animation.start()
 
 func explode():

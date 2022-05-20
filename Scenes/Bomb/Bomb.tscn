@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Bomb/Bomb.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Resources/PM_BombExplosion.tres" type="Material" id=3]
 [ext_resource path="res://Scenes/Bomb/Explosion.tscn" type="PackedScene" id=4]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 30.0167
 
 [node name="bomb" type="KinematicBody2D"]
 collision_layer = 4
@@ -43,10 +40,25 @@ texture = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="explodes"]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-one_way_collision = true
-
 [node name="animation_tween" type="Tween" parent="."]
 
 [node name="tick_timer" type="Timer" parent="."]
+
+[node name="Left" type="CollisionPolygon2D" parent="."]
+rotation = -1.5708
+polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
+one_way_collision = true
+
+[node name="Down" type="CollisionPolygon2D" parent="."]
+rotation = 3.14159
+polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
+one_way_collision = true
+
+[node name="Right" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
+one_way_collision = true
+
+[node name="Up" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
+one_way_collision = true
