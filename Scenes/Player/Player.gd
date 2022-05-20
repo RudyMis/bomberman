@@ -44,7 +44,10 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
-	
+
 func change_text():
 	label.set_text("Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
-	
+
+func explode():
+	pass # Add logic dependent on player's power ups
+	call_deferred("queue_free")
