@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 class_name Bomb
 func is_class(name): return "Bomb" || .is_class(name)
@@ -29,6 +29,9 @@ onready var explosion_rays = $explosion_rays
 var current_tick = 0
 var exploded = false
 
+var push_direction = Vector2.ZERO
+var push_speed: float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Doesn't tick at start and end
@@ -39,6 +42,17 @@ func _ready():
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
 			ray.cast_to.x = explosion_radius
+
+func _physics_process(delta):
+	
+	if push_direction != Vector2.ZERO:
+		var new_direction = move_and_slide(push_direction * push_speed).normalized()
+		if (new_direction != push_direction):
+			push_direction = Vector2.ZERO
+			snap_to_cells()
+
+func push(direction: Vector2, speed: float):
+	push_direction = direction.normalized()
 
 func restart():
 	t_tick.stop()

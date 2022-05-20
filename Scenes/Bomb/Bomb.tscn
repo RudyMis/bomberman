@@ -8,11 +8,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0167
 
-[node name="bomb" type="Area2D"]
+[node name="bomb" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 4
-gravity_vec = Vector2( 0, 0 )
-gravity = 0.0
+collision_mask = 7
 script = ExtResource( 1 )
 cell_size = Vector2( 64, 64 )
 number_of_ticks = 3
@@ -47,6 +45,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="animation_tween" type="Tween" parent="."]
 
