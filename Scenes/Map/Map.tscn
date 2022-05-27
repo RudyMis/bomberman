@@ -28,3 +28,17 @@ collision_mask = 5
 position = Vector2( 93, 869 )
 collision_mask = 5
 player = "2"
+
+[node name="StatsPlayer1" type="Label" parent="."]
+margin_left = 1025.0
+margin_top = 200.0
+margin_right = 1204.0
+margin_bottom = 200.0
+text = "Player 1: "
+
+[node name="StatsPlayer2" type="Label" parent="."]
+margin_left = 1025.0
+margin_top = 350.0
+margin_right = 1202.0
+margin_bottom = 300.0
+text = "Player 2:"
