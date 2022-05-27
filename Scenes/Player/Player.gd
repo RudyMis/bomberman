@@ -60,7 +60,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func change_text():
-	label.set_text("Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
+	get_parent().get_node("StatsPlayer" + player).set_text("Player " + player + ":\n" + "Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
 
 func explode():
 	pass # Add logic dependent on player's power ups
