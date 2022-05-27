@@ -83,7 +83,8 @@ func explode():
 	t_tick.stop()
 	exploded = true
 	what_explodes.call_deferred("queue_free")
-	bomberman.bombs += 1
+	if is_instance_valid(bomberman):
+		bomberman.bombs += 1
 	push_direction = Vector2.ZERO
 	# TODO(Mikołaj): Should it snap to cells when it explodes while moving?
 	snap_to_cells()
