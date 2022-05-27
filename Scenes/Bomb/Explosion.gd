@@ -17,9 +17,9 @@ func _ready():
 
 func _process(_delta):
 	if explosion_cast.is_colliding():
-		# Owner should have function to destroy itself
-		if explosion_cast.get_collider() == null:
-			return
 		var collider = explosion_cast.get_collider()
-		if collider != null && collider.has_method("explode"):
+		if collider == null:
+			return
+		# Owner should have function to destroy itself
+		if collider.has_method("explode"):
 			collider.explode()
