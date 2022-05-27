@@ -52,6 +52,7 @@ func _physics_process(delta):
 			snap_to_cells()
 
 func push(direction: Vector2, speed: float):
+	push_speed = speed
 	push_direction = direction.normalized()
 
 func restart():
@@ -83,6 +84,9 @@ func explode():
 	exploded = true
 	what_explodes.call_deferred("queue_free")
 	bomberman.bombs += 1
+	push_direction = Vector2.ZERO
+	# TODO(Mikołaj): Should it snap to cells when it explodes while moving?
+	snap_to_cells()
 	disable_collision()
 
 	for ray in explosion_rays.get_children():
