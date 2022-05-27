@@ -45,8 +45,18 @@ func _unhandled_input(event):
 	if event.is_action_pressed("bomb" + player):
 		place_bomb()
 
-func _physics_process(_delta):
+func push_objects(delta):
+	# Test for collision without moving
+	var collision = move_and_collide(velocity * delta, true, true, true)
+	if collision == null:
+		return
+	if collision.collider.has_method("push"):
+		var direction = -collision.normal
+		collision.collider.push(direction, speed)
+
+func _physics_process(delta):
 	get_input()
+	push_objects(delta)
 	velocity = move_and_slide(velocity)
 
 func change_text():
