@@ -27,6 +27,6 @@ func _process(_delta):
 				return
 	  # Owner should have function to destroy itself
 			if collider.has_method("explode"):
-				if collider.is_class("Player"):
+				if collider.is_class("Player") || collider.is_class("Powerup"):
 					check_hitbox = true
 				collider.explode()

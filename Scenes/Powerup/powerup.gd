@@ -1,6 +1,8 @@
 extends Node
 
 class_name Powerup
+func is_class(name): return "Powerup" || .is_class(name)
+func get_class(): return "Powerup"
 
 # Declare member variables here. Examples:
 # var a = 2
