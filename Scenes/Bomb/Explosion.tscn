@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Bomb/Explosion.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="explosion_checker" type="RayCast2D"]
 enabled = true
@@ -20,9 +22,10 @@ bones = [ "Bone2D", PoolRealArray( 1, 1, 0, 0 ) ]
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
 [node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+material = SubResource( 1 )
 rest = Transform2D( 1, 0, 0, 1, 64, 0 )
 
 [node name="explosion" type="RayCast2D" parent="."]
 cast_to = Vector2( 0, 0 )
-collision_mask = 7
+collision_mask = 15
 collide_with_areas = true
