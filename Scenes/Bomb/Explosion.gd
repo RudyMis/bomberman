@@ -23,10 +23,10 @@ func _process(_delta):
 		explosion_cast.force_raycast_update()
 		if explosion_cast.is_colliding():
 			var collider = explosion_cast.get_collider()
-      if collider == null:
-        return
-      # Owner should have function to destroy itself
-      if collider.has_method("explode"):
+			if collider == null:
+				return
+	  # Owner should have function to destroy itself
+			if collider.has_method("explode"):
 				if collider.is_class("Player"):
 					check_hitbox = true
 				collider.explode()
