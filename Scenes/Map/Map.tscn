@@ -22,7 +22,9 @@ scenes = [ ExtResource( 3 ) ]
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 97, 99 )
+collision_mask = 5
 
 [node name="player2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 93, 869 )
+collision_mask = 5
 player = "2"

@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+class_name Player
+func is_class(name): return "Player" || .is_class(name)
+func get_class(): return "Player"
+
 export (int) var speed = 200
 export (PackedScene) var ps_bomb
 export (String) var player = "1"
@@ -54,7 +58,10 @@ func _physics_process(delta):
 	get_input()
 	push_objects(delta)
 	velocity = move_and_slide(velocity)
-	
+
 func change_text():
 	label.set_text("Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
-	
+
+func explode():
+	pass # Add logic dependent on player's power ups
+	call_deferred("queue_free")
