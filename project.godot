@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "KinematicBody2D",
 "class": "Bomb",
 "language": "GDScript",
 "path": "res://Scenes/Bomb/Bomb.gd"
