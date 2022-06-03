@@ -56,6 +56,9 @@ func _ready():
 	iframes_timer.set_wait_time(iframes_time)
 	iframes_timer.connect("timeout", self, "_on_timer_timeout")
 	add_child(iframes_timer)
+	rng.randomize()
+	var seed_cat = rng.randi()
+	rng.set_seed(int(player) + seed_cat)
 	var random = rng.randi_range(0, cats_animations.size())
 	sprite.frames = cats_animations[random];
 	pass # Replace with function body.
