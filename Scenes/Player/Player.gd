@@ -10,9 +10,15 @@ export (String) var player = "1"
 
 var bombs = 2;
 export (int) var bomb_range = 1
+var has_shield = true
 export (int) var radious_range_const = 64
 var velocity = Vector2()
 onready var label = $Label
+onready var sprite = $Sprite
+
+var iframes_time = 3
+var has_iframes = false
+var iframes_timer = Timer.new()
 
 func get_input():
 	velocity = Vector2()
@@ -39,6 +45,9 @@ func place_bomb():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_text()
+	iframes_timer.set_wait_time(iframes_time)
+	iframes_timer.connect("timeout", self, "_on_timer_timeout")
+	add_child(iframes_timer)
 	pass # Replace with function body.
 
 func _unhandled_input(event):
@@ -60,8 +69,20 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func change_text():
-	get_parent().get_node("StatsPlayer" + player).set_text("Player " + player + ":\n" + "Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
+  get_parent().get_node("StatsPlayer" + player).set_text("Player " + player + ":\n" + "Range: " + str(bomb_range) + "\n" + "Bombs: " + str(bombs))
+
+func _on_timer_timeout():
+	has_iframes = false
+	sprite.modulate = Color(1, 1, 1)
 
 func explode():
 	pass # Add logic dependent on player's power ups
+	if has_iframes:
+		return
+	if has_shield:
+		has_shield = false
+		has_iframes = true
+		iframes_timer.start()
+		sprite.modulate = Color(0.5, 0.5, 0.5)
+		return
 	call_deferred("queue_free")
