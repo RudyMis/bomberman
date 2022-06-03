@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Bomb/Bomb.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Resources/PM_BombExplosion.tres" type="Material" id=3]
 [ext_resource path="res://Scenes/Bomb/Explosion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/sounds/Hurt01.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/sounds/Jump02.wav" type="AudioStream" id=6]
 
 [node name="bomb" type="KinematicBody2D"]
 collision_layer = 4
@@ -62,3 +64,9 @@ one_way_collision = true
 [node name="Up" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
 one_way_collision = true
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Place" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

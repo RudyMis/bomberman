@@ -24,6 +24,8 @@ onready var t_tick = $tick_timer
 onready var par_explosion = $explosion_particles
 onready var what_explodes = $explodes
 onready var explosion_rays = $explosion_rays
+onready var explosion_sound = $Explosion
+onready var place_sound = $Place
 
 var bomberman
 var current_tick = 0
@@ -42,6 +44,7 @@ func _ready():
 	for ray in explosion_rays.get_children():
 		if ray as RayCast2D != null:
 			ray.cast_to.x = explosion_radius
+	place_sound.play()
 
 func _physics_process(delta):
 	
@@ -80,12 +83,13 @@ func explode():
 	if exploded == true:
 		return
 	
+	explosion_sound.play()
 	t_tick.stop()
 	exploded = true
 	what_explodes.call_deferred("queue_free")
 	if is_instance_valid(bomberman):
 		bomberman.bombs += 1
-	bomberman.change_text();
+		bomberman.change_text()
 	push_direction = Vector2.ZERO
 	# TODO(Mikołaj): Should it snap to cells when it explodes while moving?
 	snap_to_cells()

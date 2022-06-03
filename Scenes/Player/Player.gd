@@ -15,6 +15,7 @@ export (int) var radious_range_const = 64
 var velocity = Vector2()
 onready var label = $Label
 onready var sprite = $Sprite
+onready var hurt_sound = $Hurt
 
 var iframes_time = 3
 var has_iframes = false
@@ -76,9 +77,10 @@ func _on_timer_timeout():
 	sprite.modulate = Color(1, 1, 1)
 
 func explode():
-	pass # Add logic dependent on player's power ups
+	# TODO: Add logic dependent on player's power ups
 	if has_iframes:
 		return
+	hurt_sound.play()
 	if has_shield:
 		has_shield = false
 		has_iframes = true
