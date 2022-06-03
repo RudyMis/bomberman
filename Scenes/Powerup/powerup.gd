@@ -1,13 +1,10 @@
-extends Node
+extends Area2D
 
 class_name Powerup
 func is_class(name): return "Powerup" || .is_class(name)
 func get_class(): return "Powerup"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+onready var sound = $Sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +16,10 @@ func _ready():
 #	pass
 
 func make_bonus(body):
-	pass
+	sound.play()
+	visible = false
+	yield(sound, "finished")
+	call_deferred("queue_free")
 
 func explode():
 	call_deferred("queue_free")
@@ -29,5 +29,4 @@ func _on_Powerup_body_entered(body):
 		make_bonus(body)
 		body.change_text()
 	
-	call_deferred("queue_free")
 	

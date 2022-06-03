@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Attack01.wav-7503da3ae68f3d870eb951ecc61c112b.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Attack01.wav"
+dest_files=[ "res://.import/Attack01.wav-7503da3ae68f3d870eb951ecc61c112b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

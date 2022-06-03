@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hurt02.wav-601f5efe412d3628709b64ce6daae362.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Hurt02.wav"
+dest_files=[ "res://.import/Hurt02.wav-601f5efe412d3628709b64ce6daae362.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
