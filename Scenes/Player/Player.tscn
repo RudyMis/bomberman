@@ -1,19 +1,65 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/Player/PlayerAnimationBlack000.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Bomb/Bomb.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlue000.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBrown000.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBrown002.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBrown001.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlack001.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlue001.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlue003.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlack002.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://Scenes/Player/PlayerAnimationCalico000.tres" type="SpriteFrames" id=12]
+[ext_resource path="res://Scenes/Player/PlayerAnimationClown000.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://Scenes/Player/PlayerAnimationCreme000.tres" type="SpriteFrames" id=14]
+[ext_resource path="res://Scenes/Player/PlayerAnimationCreme001.tres" type="SpriteFrames" id=15]
+[ext_resource path="res://Scenes/Player/PlayerAnimationCreme002.tres" type="SpriteFrames" id=16]
+[ext_resource path="res://Scenes/Player/PlayerAnimationDark000.tres" type="SpriteFrames" id=17]
+[ext_resource path="res://Scenes/Player/PlayerAnimationDark001.tres" type="SpriteFrames" id=18]
+[ext_resource path="res://Scenes/Player/PlayerAnimationDark002.tres" type="SpriteFrames" id=19]
+[ext_resource path="res://Scenes/Player/PlayerAnimationDark003.tres" type="SpriteFrames" id=20]
+[ext_resource path="res://Scenes/Player/PlayerAnimationDark004.tres" type="SpriteFrames" id=21]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGhost000.tres" type="SpriteFrames" id=22]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGold000.tres" type="SpriteFrames" id=23]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGreen000.tres" type="SpriteFrames" id=24]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGreen001.tres" type="SpriteFrames" id=25]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGrey000.tres" type="SpriteFrames" id=26]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGrey001.tres" type="SpriteFrames" id=27]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGrey002.tres" type="SpriteFrames" id=28]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGreyTabby000.tres" type="SpriteFrames" id=29]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGreyTabby001.tres" type="SpriteFrames" id=30]
+[ext_resource path="res://Scenes/Player/PlayerAnimationGreyTabby002.tres" type="SpriteFrames" id=31]
+[ext_resource path="res://Scenes/Player/PlayerAnimationOrange002.tres" type="SpriteFrames" id=32]
+[ext_resource path="res://Scenes/Player/PlayerAnimationOrange003.tres" type="SpriteFrames" id=33]
+[ext_resource path="res://Scenes/Player/PlayerAnimationOrangeTabby000.tres" type="SpriteFrames" id=34]
+[ext_resource path="res://Scenes/Player/PlayerAnimationOrangeTabby001.tres" type="SpriteFrames" id=35]
+[ext_resource path="res://Scenes/Player/PlayerAnimationPink000.tres" type="SpriteFrames" id=36]
+[ext_resource path="res://Scenes/Player/PlayerAnimationPink001.tres" type="SpriteFrames" id=37]
+[ext_resource path="res://Scenes/Player/PlayerAnimationRadioactive000.tres" type="SpriteFrames" id=38]
+[ext_resource path="res://Scenes/Player/PlayerAnimationRed000.tres" type="SpriteFrames" id=39]
+[ext_resource path="res://Scenes/Player/PlayerAnimationSealPoint000.tres" type="SpriteFrames" id=40]
+[ext_resource path="res://Scenes/Player/PlayerAnimationSealPoint001.tres" type="SpriteFrames" id=41]
+[ext_resource path="res://Scenes/Player/PlayerAnimationWhite000.tres" type="SpriteFrames" id=42]
+[ext_resource path="res://Scenes/Player/PlayerAnimationWhiteGrey000.tres" type="SpriteFrames" id=43]
+[ext_resource path="res://Scenes/Player/PlayerAnimationWhiteGrey001.tres" type="SpriteFrames" id=44]
+[ext_resource path="res://Scenes/Player/PlayerAnimationWhiteGrey002.tres" type="SpriteFrames" id=45]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlue002.tres" type="SpriteFrames" id=46]
+[ext_resource path="res://Scenes/Player/PlayerAnimationBlack003.tres" type="SpriteFrames" id=47]
 
 [node name="player" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource( 2 )
 ps_bomb = ExtResource( 3 )
+cats_animations = [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 47 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 46 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ]
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
-frames = ExtResource( 1 )
+frames = ExtResource( 9 )
 animation = "nothing"
+frame = 7
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
