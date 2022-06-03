@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Bomb/Bomb.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Resources/PM_BombExplosion.tres" type="Material" id=3]
 [ext_resource path="res://Scenes/Bomb/Explosion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spritesheets/wool-removebg-preview.png" type="Texture" id=5]
 
 [node name="bomb" type="KinematicBody2D"]
 collision_layer = 4
@@ -38,7 +39,9 @@ texture = ExtResource( 2 )
 [node name="explodes" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="explodes"]
-texture = ExtResource( 2 )
+position = Vector2( 0, -3 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
 
 [node name="animation_tween" type="Tween" parent="."]
 
