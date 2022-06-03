@@ -9,8 +9,9 @@ var rng = RandomNumberGenerator.new()
 onready var sound = $Sound
 
 func explode():
-	var random = rng.randi_range(0, 4)
-	if (random < 3):
+	call_deferred("queue_free")
+	var random = rng.randi_range(0, ps_powerup.size() + 1)
+	if (random < ps_powerup.size()):
 		var power = ps_powerup[random].instance()
 		power.position = position
 		get_parent().add_child(power)

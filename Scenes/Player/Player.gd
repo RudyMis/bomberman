@@ -7,7 +7,9 @@ func get_class(): return "Player"
 export (int) var speed = 200
 export (PackedScene) var ps_bomb
 export (String) var player = "1"
+export (Array, Resource) var cats_animations
 
+var rng = RandomNumberGenerator.new()
 var bombs = 2;
 export (int) var bomb_range = 1
 var has_shield = true
@@ -25,13 +27,19 @@ func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("right" + player):
 		velocity.x += 1
+		sprite.play("right");
 	if Input.is_action_pressed("left" + player):
 		velocity.x -= 1
+		sprite.play("left");
 	if Input.is_action_pressed("down" + player):
 		velocity.y += 1
+		sprite.play("down");
 	if Input.is_action_pressed("up" + player):
 		velocity.y -= 1
+		sprite.play("up");
 	velocity = velocity.normalized() * speed
+	if velocity == Vector2.ZERO:
+		sprite.play("nothing");
 
 func place_bomb():
 	if bombs > 0:
@@ -49,6 +57,11 @@ func _ready():
 	iframes_timer.set_wait_time(iframes_time)
 	iframes_timer.connect("timeout", self, "_on_timer_timeout")
 	add_child(iframes_timer)
+	rng.randomize()
+	var seed_cat = rng.randi()
+	rng.set_seed(int(player) + seed_cat)
+	var random = rng.randi_range(0, cats_animations.size())
+	sprite.frames = cats_animations[random];
 	pass # Replace with function body.
 
 func _unhandled_input(event):
