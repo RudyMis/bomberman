@@ -65,3 +65,9 @@ one_way_collision = true
 [node name="Up" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -30, -30, -30, -28, 30, -28, 30, -30 )
 one_way_collision = true
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Place" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

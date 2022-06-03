@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Player/Player.gd"
 }, {
-"base": "Node",
+"base": "Area2D",
 "class": "Powerup",
 "language": "GDScript",
 "path": "res://Scenes/Powerup/powerup.gd"
