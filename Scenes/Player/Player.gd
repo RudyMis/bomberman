@@ -24,13 +24,19 @@ func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("right" + player):
 		velocity.x += 1
+		sprite.play("right");
 	if Input.is_action_pressed("left" + player):
 		velocity.x -= 1
+		sprite.play("left");
 	if Input.is_action_pressed("down" + player):
 		velocity.y += 1
+		sprite.play("down");
 	if Input.is_action_pressed("up" + player):
 		velocity.y -= 1
+		sprite.play("up");
 	velocity = velocity.normalized() * speed
+	if velocity.normalized() == Vector2.ZERO:
+		sprite.play("nothing");
 
 func place_bomb():
 	if bombs > 0:
