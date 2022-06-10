@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Resources/Cats/PlayerAnimationBlack000.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
@@ -48,7 +47,7 @@
 [ext_resource path="res://Resources/Cats/PlayerAnimationWhiteGrey002.tres" type="SpriteFrames" id=45]
 [ext_resource path="res://Resources/Cats/PlayerAnimationBlue002.tres" type="SpriteFrames" id=46]
 [ext_resource path="res://Resources/Cats/PlayerAnimationBlack003.tres" type="SpriteFrames" id=47]
-
+[ext_resource path="res://Assets/sounds/Hurt02.wav" type="AudioStream" id=48]
 
 [node name="player" type="KinematicBody2D"]
 collision_layer = 2
@@ -61,7 +60,7 @@ cats_animations = [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 11 ), ExtRe
 scale = Vector2( 2, 2 )
 frames = ExtResource( 9 )
 animation = "nothing"
-frame = 7
+frame = 5
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -69,4 +68,4 @@ visible = false
 polygon = PoolVector2Array( -16, -31.5, -31.5, -16, -31.5, 16, -16, 31.5, 16, 31.5, 31.5, 16, 31.5, -16, 16, -31.5 )
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 48 )
