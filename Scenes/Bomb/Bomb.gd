@@ -55,7 +55,7 @@ func _physics_process(delta):
 			snap_to_cells()
 
 func push(direction: Vector2, speed: float):
-	push_speed = speed
+	push_speed = speed * 1.5
 	push_direction = direction.normalized()
 
 func restart():
