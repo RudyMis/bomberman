@@ -18,7 +18,6 @@ func explode():
 		var power = ps_powerup[random].instance()
 		power.position = position
 		get_parent().add_child(power)
-		print("PP spawned")
 	
 	# Play sound and destroy itself
 	# TODO: Disable hitbox here
