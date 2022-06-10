@@ -75,7 +75,8 @@ func push_objects(delta):
 		return
 	if collision.collider.has_method("push"):
 		var direction = -collision.normal
-		collision.collider.push(direction, speed)
+		if (velocity != Vector2.ZERO):
+			collision.collider.push(direction, speed)
 
 func _physics_process(delta):
 	get_input()
