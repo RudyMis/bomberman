@@ -1,5 +1,8 @@
 extends Node2D
 
+class_name Block
+func is_class(name): return "Block" || .is_class(name)
+func get_class(): return "Block"
 
 # Declare member variables here. Examples:
 # var a = 2

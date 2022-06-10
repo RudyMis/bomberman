@@ -9,6 +9,8 @@ func explode():
 	
 	# Position is applied before rotation
 	hit_position = Vector2(hit_position.length(), 0)
+#	if is_colliding() && get_collider().has_method("is_class") && get_collider().is_class("Block"):
+#		hit_position.x += 63
 	explosion_cast.cast_to = hit_position
 	explosion_cast.enabled = true
 	bone.position = hit_position
