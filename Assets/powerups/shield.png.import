@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bombup.png-8d4654d96e486ba2f0354f0ca310dc20.stex"
+path="res://.import/shield.png-bb2e8e25c7f5abe0afdeeab746d3569e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bombup.png"
-dest_files=[ "res://.import/bombup.png-8d4654d96e486ba2f0354f0ca310dc20.stex" ]
+source_file="res://Assets/powerups/shield.png"
+dest_files=[ "res://.import/shield.png-bb2e8e25c7f5abe0afdeeab746d3569e.stex" ]
 
 [params]
 
