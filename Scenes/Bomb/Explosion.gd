@@ -5,6 +5,7 @@ onready var explosion_cast: RayCast2D = $explosion
 var check_hitbox = false
 
 func explode():
+	visible = true
 	var hit_position = global_position - get_collision_point() if is_colliding() else cast_to
 	
 	# Position is applied before rotation
@@ -15,6 +16,7 @@ func explode():
 	check_hitbox = true
 
 func _ready():
+	visible = false
 	bone.position = Vector2.ZERO
 
 func _process(_delta):
