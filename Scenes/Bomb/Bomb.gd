@@ -16,7 +16,7 @@ export (float) var animation_time = 0.1
 export (Array, Color) var modulates = [Color.yellow, Color.red]
 
 # [Explosion properties]
-export (int) var explosion_radius = 64
+export (int) var explosion_radius = 63
 export (float) var explosion_time = 2
 
 onready var tw_animation = $animation_tween

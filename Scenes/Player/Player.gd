@@ -45,7 +45,7 @@ func place_bomb():
 	if bombs > 0:
 		var bomb = ps_bomb.instance()
 		bomb.position = position
-		bomb.explosion_radius = 32 + 	bomb_range * radious_range_const
+		bomb.explosion_radius = 31 + 	bomb_range * radious_range_const
 		get_parent().add_child(bomb)
 		bomb.bomberman = self
 		bombs -= 1
